@@ -1,0 +1,18 @@
+{
+	"clusters": {
+		"c1": {
+			"url": "https://c1.xen.example.com",
+			"username": "root",
+			"password": "secret"
+		},
+		"c2": {
+			"url": "https://c2.xen.example.com",
+			"username": "root",
+			"password": "secret"
+		}
+	},
+	"graphite": {
+		"prefix": "xen.vms.",
+		"address": ["graphite.example.com", 2004]
+	}
+}

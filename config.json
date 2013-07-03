@@ -1,7 +1,0 @@
-{
-	"url": "http://xen.cs.example.com",
-	"username": "root",
-	"password": "secret",
-	"prefix": "cloud.xen.",
-	"graphite_addr": ["graphite.cs.example.com", 2004]
-}
