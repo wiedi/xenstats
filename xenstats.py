@@ -34,7 +34,6 @@ class XenStats:
 		for vm in self.session.xenapi.VM.get_all():
 			vmr = self.session.xenapi.VM.get_record(vm)
 			if vmr["power_state"] != "Running": continue
-			if vmr["is_control_domain"]: continue
 			ret[vmr["uuid"]] = self.read_data_sources(vm)
 		return ret
 	
