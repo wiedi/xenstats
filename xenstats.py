@@ -23,7 +23,6 @@ class XenStats:
 			if not ds["enabled"]: continue
 
 			try:
-				print ds, self.session.xenapi.VM.query_data_source(vm, ds["name_label"])
 				ret[ds["name_label"]] = (int(time.time()), self.session.xenapi.VM.query_data_source(vm, ds["name_label"]))
 			except:
 				pass
