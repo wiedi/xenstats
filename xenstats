@@ -48,7 +48,7 @@ class XenStats:
 	
 	def send_to_graphite(self):
 		vms = self.fetch_all()
-		for vm in vms: 
+		for vm in vms:
 			metrics = []
 			for metric in vms[vm]:
 				metrics += [(
@@ -58,7 +58,12 @@ class XenStats:
 			self.__send(metrics)
 
 def main():
-	config = json.load(open(ROOT + '/config.json'))
+	try:
+		config = json.load(open('/etc/xenstats.json'))
+	except:
+		print 'Failed to load config'
+		return
+
 	for cluster in config["clusters"]:
 		c = dict(config["clusters"][cluster].items() + config["graphite"].items())
 		XenStats(c).send_to_graphite()
